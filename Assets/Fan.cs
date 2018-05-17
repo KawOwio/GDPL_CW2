@@ -7,6 +7,7 @@ public class Fan : MonoBehaviour
     public int JUMP_HEIGHT;
     public Vector3 trans;
     private int velocity;
+    public GameObject ball;
 
     // Use this for initialization
     void Start()
@@ -19,15 +20,14 @@ public class Fan : MonoBehaviour
     {
         if (velocity > 0)
         {
-            transform.Translate(trans * Time.deltaTime, Space.World);
+            ball.transform.Translate(trans * Time.deltaTime, Space.World);
             velocity--;
         }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.gameObject.name);
-        if (other.gameObject.name == "Bounce")
+        if (other.gameObject.name == "Ball")
         {
             velocity = JUMP_HEIGHT;
 
