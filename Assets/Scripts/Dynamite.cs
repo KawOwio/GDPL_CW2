@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//https://www.youtube.com/watch?v=XMDfhHyOacM
+//Tutorial used to make it
+
 public class Dynamite : MonoBehaviour
 {
     public GameObject bomb;

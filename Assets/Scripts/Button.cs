@@ -35,17 +35,6 @@ public class Button : MonoBehaviour
         {
             timer = 5;
             pressed = true;
-            Debug.Log(other.gameObject.name);
-        }
-    }
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.tag == "Collision")
-        {
-            pressed = true;
-            //timer = 0;
-            Debug.Log(other.gameObject.name);
-            System.Console.WriteLine("Collision Exit");
         }
     }
 }

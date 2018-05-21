@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//https://answers.unity.com/questions/16146/changing-between-cameras.html
+//Tutorial used to make it
+
 public class CameraSwitch : MonoBehaviour
 {
     public Camera[] cameras;
@@ -17,24 +20,16 @@ public class CameraSwitch : MonoBehaviour
         {
             cameras[i].gameObject.SetActive(false);
         }
-
-        //If any cameras were added to the controller, enable the first one
-        if (cameras.Length > 0)
-        {
-            cameras[0].gameObject.SetActive(true);
-            Debug.Log("Camera with name: " + cameras[0].name + ", is now enabled");
-        }
-
     }
 	
 	void Update ()
     {
+        //Check for every camera
         for (int i = 0; i < 5; i++)
         {
             if (balls[i].GetComponent<BallCollision>().nextCamera == true)
             {
                 currentCameraIndex++;
-                Debug.Log("Switching to the next camera");
                 if (currentCameraIndex < cameras.Length)
                 {
                     cameras[currentCameraIndex - 1].gameObject.SetActive(false);

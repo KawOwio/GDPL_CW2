@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollowBall : MonoBehaviour {
+public class CameraFollowBall : MonoBehaviour
+{
 
     public GameObject ball;
     private Vector3 offset;
